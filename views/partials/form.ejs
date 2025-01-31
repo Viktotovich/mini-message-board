@@ -1,3 +1,18 @@
 <html>
-  <form method="POST" action="/new"></form>
+  <form method="POST" action="/new">
+    <label for="author-name">
+      Author Name:
+      <input type="text" id="author-name" value="Anon" name="authorName" />
+    </label>
+    <label for="text">
+      Comment / Text:
+      <textarea
+        type="text"
+        id="text"
+        placeholder="Enter your message here"
+        name="text"
+      ></textarea>
+    </label>
+    <button id="submit-form">Submit</button>
+  </form>
 </html>
