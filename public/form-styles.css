@@ -1,0 +1,27 @@
+form {
+  margin: 10% 30%;
+  padding: 1rem;
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+}
+
+label {
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#submit-form {
+  appearance: none;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+
+#submit-form:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}

@@ -1,18 +1,24 @@
 <html>
+  <body>
+    <title>Make A New Post</title>
+    <link rel="stylesheet" href="/form-styles.css" />
+  </body>
   <form method="POST" action="/new">
-    <label for="author-name">
-      Author Name:
-      <input type="text" id="author-name" value="Anon" name="authorName" />
-    </label>
-    <label for="text">
-      Comment / Text:
-      <textarea
-        type="text"
-        id="text"
-        placeholder="Enter your message here"
-        name="text"
-      ></textarea>
-    </label>
+    <div class="labels-wrapper">
+      <label for="author-name">
+        Author Name:
+        <input type="text" id="author-name" value="Anon" name="authorName" />
+      </label>
+      <label for="text">
+        Comment / Text:
+        <textarea
+          type="text"
+          id="text"
+          placeholder="Enter your message here"
+          name="text"
+        ></textarea>
+      </label>
+    </div>
     <button id="submit-form">Submit</button>
   </form>
 </html>

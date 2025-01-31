@@ -1,8 +1,29 @@
+<style>
+  .messages {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 20%;
+  }
+
+  .message-container {
+    padding-bottom: 1rem;
+    border-bottom: dashed 1px darkblue;
+  }
+
+  .u-and-d {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a.hidden {
+    display: none;
+  }
+</style>
 <div class="message-container">
   <div class="u-and-d">
     <p><%= message.user%></p>
     <p><%= message.added%></p>
   </div>
   <p><%= message.text%></p>
-  <a href="/message/<%= message.id %>">Open Message</a>
+  <a href="/message/<%= message.id %>" class="<%= visibility%>">Open Message</a>
 </div>

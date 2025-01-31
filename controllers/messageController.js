@@ -9,7 +9,7 @@ const getMessageById = function (req, res) {
     throw new Error("Can't find the message, perhaps it was deleted?");
   }
 
-  res.render("partials/message", { message: message });
+  res.render("partials/message", { message: message, visibility: "hidden" });
 };
 
 function getMessage(id) {

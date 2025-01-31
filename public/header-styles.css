@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  border-bottom: 1px solid black;
+  padding: 1rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+nav a:hover {
+  background-color: gray;
+  cursor: pointer;
+  color: white;
+}
