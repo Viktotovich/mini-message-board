@@ -10,9 +10,17 @@ messageRouter.get("/", (req, res) => {
 messageRouter.post("/", (req, res) => {
   const message = req.body.text;
   const authorName = req.body.authorName;
+  msgID += 1;
 
-  messages.push({ text: message, user: authorName, added: new Date() });
+  messages.push({
+    text: message,
+    user: authorName,
+    added: new Date(),
+    id: msgID,
+  });
   res.redirect("/");
 });
+
+let msgID = 3;
 
 module.exports = messageRouter;

@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("node:path");
 const messages = require("./db");
 const messageRouter = require("./routes/messageRouter");
+const vmRouter = require("./routes/viewMessageRouter");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/new", messageRouter);
+app.use("/message", vmRouter);
 
 app.get("/throw", (req, res) => {
   throw new Error("Intentional Failure");
