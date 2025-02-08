@@ -8,7 +8,12 @@ const query = `
     text VARCHAR( 255 ) NOT NULL,
     user VARCHAR( 50 ) NOT NULL,
     added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
+    );
+
+    INSERT INTO message_board (text, user) VALUES
+    ('Que Onda', 'Juanito'),
+    ('Ogo', 'Viktor'),
+    ('Cool, there is a DB connected', 'Viktotovich')
 `;
 
 async function start() {

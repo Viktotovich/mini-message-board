@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("node:path");
-const messages = require("./db");
+const { getAllMessages } = require("./db/queries");
 const messageRouter = require("./routes/messageRouter");
 const vmRouter = require("./routes/viewMessageRouter");
 
@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  const messages = await getAllMessages();
   res.render("pages/index", { messages: messages });
 });
 

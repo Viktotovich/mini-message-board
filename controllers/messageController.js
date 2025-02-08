@@ -1,9 +1,8 @@
-const db = require("../db");
+const db = require("../db/queries");
 
-const getMessageById = function (req, res) {
+const getMessageById = async function (req, res) {
   const messageId = req.params.id;
-
-  const message = getMessage(messageId);
+  const message = await db.findMessage(messageId);
 
   if (!message) {
     throw new Error("Can't find the message, perhaps it was deleted?");
@@ -11,12 +10,5 @@ const getMessageById = function (req, res) {
 
   res.render("partials/message", { message: message, visibility: "hidden" });
 };
-
-function getMessage(id) {
-  let foundMsg = db.filter((message) => {
-    return message.id == id;
-  });
-  return foundMsg[0];
-}
 
 module.exports = getMessageById;

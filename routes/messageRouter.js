@@ -1,26 +1,20 @@
 const { Router } = require("express");
-const messages = require("../db");
-
+const { insertMessage } = require("../db/queries");
 const messageRouter = Router();
 
 messageRouter.get("/", (req, res) => {
   res.render("partials/form");
 });
 
-messageRouter.post("/", (req, res) => {
+messageRouter.post("/", async (req, res) => {
   const message = req.body.text;
   const authorName = req.body.authorName;
-  msgID += 1;
 
-  messages.push({
+  await insertMessage({
     text: message,
     user: authorName,
-    added: new Date(),
-    id: msgID,
   });
   res.redirect("/");
 });
-
-let msgID = 3;
 
 module.exports = messageRouter;
