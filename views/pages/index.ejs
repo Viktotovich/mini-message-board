@@ -9,8 +9,9 @@
   <body>
     <%- include('../partials/header')%>
     <div class="messages">
-      <% messages.forEach((message) => {%> <%- include("../partials/message",
-      {message: message, visibility: "normal"})%> <%}) %>
+      <% if (messages !== undefined) {%> <% messages.forEach((message) => {%>
+      <%- include("../partials/message", {message: message, visibility:
+      "normal"})%> <%}) %> <% }%>
     </div>
   </body>
 </html>
