@@ -6,11 +6,11 @@ const query = `
     CREATE TABLE IF NOT EXISTS message_board (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text VARCHAR( 255 ) NOT NULL,
-    user VARCHAR( 50 ) NOT NULL,
+    username VARCHAR( 50 ) NOT NULL,
     added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
-    INSERT INTO message_board (text, user) VALUES
+    INSERT INTO message_board (text, username) VALUES
     ('Que Onda', 'Juanito'),
     ('Ogo', 'Viktor'),
     ('Cool, there is a DB connected', 'Viktotovich')
