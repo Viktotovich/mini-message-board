@@ -11,8 +11,12 @@ async function getAllMessages() {
 }
 
 async function insertMessage(message) {
+  console.dir(message);
   try {
-    await pool.query("INSERT INTO message_board VALUES ($1)", [message]);
+    await pool.query(
+      "INSERT INTO message_board (text, username) VALUES ($1, $2)",
+      [message.text, message.user]
+    );
     return;
   } catch (err) {
     console.error(err);

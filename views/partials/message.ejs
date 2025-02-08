@@ -11,8 +11,8 @@
   }
 
   .u-and-d {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   a.hidden {
@@ -21,7 +21,7 @@
 </style>
 <div class="message-container">
   <div class="u-and-d">
-    <p><%= message.user%></p>
+    <p><%= message.username%></p>
     <p><%= message.added%></p>
   </div>
   <p><%= message.text%></p>
